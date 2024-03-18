@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        1、ioc配置无参构造函数实例化的组件
+        将一个组件类，声明两个组件信息，会实例化两个组件对象
+        默认是单例模式
+    -->
+    <bean id="testComponent1" class="com.quintus.ioc1.testComponent" />
+    <bean id="testComponent2" class="com.quintus.ioc1.testComponent" />
+
+    <!-- 2、静态工厂类 声明工厂方法进行ioc的配置
+        <bean id="组件表示" class="工厂类的全限定符" factory-method = "静态工厂方法" />
+    -->
+    <bean id="clientService" class="com.quintus.ioc1.ClientService" factory-method="createInstance" />
+
+    <!-- 3、非静态工厂 声明ioc配置    -->
+    <!-- 配置工厂类的组件信息  -->
+    <bean id="defaultServiceLocator" class="com.quintus.ioc1.DefaultServiceLocator" />
+    <!-- 通过指定非静态工厂对象和方法名，来配置生成的ioc信息  -->
+    <bean id="clientService2" factory-bean="defaultServiceLocator" factory-method="createClientServiceInstance" />
+</beans>

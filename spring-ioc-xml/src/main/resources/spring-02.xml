@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--DI配置-->
+
+    <!-- 1.单个构造参数注入
+
+        先将他们都存放在ioc容器中
+    -->
+    <bean id="userDao" class="com.quintus.ioc2.UserDao" />
+    <bean id="userService" class="com.quintus.ioc2.UserService" >
+        <!-- 构造参数传值 依赖注入di的配置
+            <constructor-arg>
+            value = 直接属性值
+            ref   = 引用其他的bean的ID值
+        -->
+        <constructor-arg ref="userDao" />
+    </bean>
+
+    <!-- 2.多个构造参数注入 -->
+<!--    <bean id = "userDao" class = "com.quintus.ioc2.UserDao"/>-->
+    <bean id="userService2" class="com.quintus.ioc2.UserService2">
+        <!--1、按方法传参顺序，顺序填写 -->
+<!--        <constructor-arg value="18"/>-->
+<!--        <constructor-arg value="王"/>-->
+<!--        <constructor-arg ref="userDao"/>-->
+
+        <!--2、按参数index填写-->
+<!--        <constructor-arg index="0" value="18"/>-->
+<!--        <constructor-arg index="1" value="李"/>-->
+<!--        <constructor-arg index="2" ref="userDao"/>-->
+
+        <!--3、根据构造参数的名称填写，不用考虑顺序  [推荐] -->
+        <constructor-arg name="age" value="18"/>
+        <constructor-arg name="name" value="马"/>
+        <constructor-arg name="userDao" ref="userDao"/>
+
+
+    </bean>
+
+    <!-- 3.触发setter方法进行注入-->
+    <bean id="movieFinder" class="com.quintus.ioc2.MovieFinder"/>
+    <bean id="simpleMovieLister" class="com.quintus.ioc2.SimpleMovieLister">
+        <!--
+            <property>标签
+            name属性：调用set方法的方法名 去掉set开头 首字母小写
+            value属性：直接属性值
+            ref属性：引用其他bean的ID
+        -->
+        <property name="movieFinder" ref="movieFinder"/>
+        <property name="movieName" value="你的名字"/>
+    </bean>
+
+
+</beans>
