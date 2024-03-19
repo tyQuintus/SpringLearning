@@ -13,6 +13,8 @@
         <module>spring-xml-demo</module>
         <module>spring-ioc-annotation</module>
         <module>spring-annotation-demo</module>
+        <module>spring-ioc-configuration</module>
+        <module>spring-configuration-demo</module>
     </modules>
 
     <properties>

@@ -28,7 +28,7 @@
     </bean>
 
 <!--    controller层-->
-    <bean id="studentController" class="com.quintus.controller.StudentController">
+    <bean id="studentController" class="com.controller.com.quintus.StudentController">
         <property name="studentService" ref="studentService" />
     </bean>
 
