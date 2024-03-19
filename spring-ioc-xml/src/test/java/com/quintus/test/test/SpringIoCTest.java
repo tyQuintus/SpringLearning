@@ -1,6 +1,6 @@
-package com.quintus.test;
+package com.quintus.test.test;
 
-import com.quintus.ioc3.HappyComponent;
+import com.quintus.test.ioc3.HappyComponent;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

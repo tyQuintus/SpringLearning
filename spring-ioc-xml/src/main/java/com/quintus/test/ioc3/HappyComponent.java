@@ -1,4 +1,4 @@
-package com.quintus.ioc3;
+package com.quintus.test.ioc3;
 
 public class HappyComponent {
     public void doWork(){

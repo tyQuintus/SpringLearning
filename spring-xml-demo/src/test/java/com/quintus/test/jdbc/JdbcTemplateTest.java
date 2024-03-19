@@ -1,4 +1,4 @@
-package com.quintus.jdbc;
+package com.quintus.test.jdbc;
 
 import com.quintus.controller.StudentController;
 import com.quintus.pojo.Student;
@@ -7,10 +7,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 public class JdbcTemplateTest {

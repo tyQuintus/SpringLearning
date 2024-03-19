@@ -1,4 +1,4 @@
-package com.quintus.ioc2;
+package com.quintus.test.ioc2;
 
 public class UserService2 {
     private UserDao userDao;
