@@ -7,7 +7,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.JdbcAccessor;
 
+import javax.sql.DataSource;
 import java.util.List;
 
 public class JdbcTemplateTest {
@@ -41,7 +43,6 @@ public class JdbcTemplateTest {
         sql = "select id, name, gender, age, class as classes from students ;";
         List<Student> studentList = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Student.class));
         System.out.println("studentList = " + studentList);
-
     }
 
     @Test

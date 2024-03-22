@@ -13,5 +13,6 @@ public class SpringIoCTest {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(JavaConfig.class);
         StudentController bean = applicationContext.getBean(StudentController.class);
         bean.findAll();
+
     }
 }
