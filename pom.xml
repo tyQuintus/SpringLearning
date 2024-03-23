@@ -16,6 +16,7 @@
         <module>spring-ioc-configuration</module>
         <module>spring-configuration-demo</module>
         <module>spring-aop-annotation</module>
+        <module>spring-tx-annotation</module>
     </modules>
 
     <properties>
@@ -75,6 +76,13 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-aspects</artifactId>
+            <version>6.0.6</version>
+        </dependency>
+
+        <!-- 声明式事务依赖 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
             <version>6.0.6</version>
         </dependency>
     </dependencies>
